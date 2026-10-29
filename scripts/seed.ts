@@ -19,7 +19,7 @@ const CATEGORIES = [
 const UNITS = [
   {
     nome: "Fast Burger Dracena",
-    endereco: "Av. Brasil, 1200 — Centro",
+    endereco: "Rua das Acácias, 100 — Centro",
     telefone: "(18) 99999-0001",
     whatsapp: "5518999990001",
     cidade: "Dracena",
@@ -29,7 +29,7 @@ const UNITS = [
   },
   {
     nome: "Fast Burger Junqueirópolis",
-    endereco: "Rua Belo Horizonte, 850 — Centro",
+    endereco: "Rua das Palmeiras, 200 — Centro",
     telefone: "(18) 99999-0002",
     whatsapp: "5518999990002",
     cidade: "Junqueirópolis",
