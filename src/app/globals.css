@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-anton), "Arial Narrow", Impact, sans-serif;
+  --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
+
+  --color-paper: #f2e9d8;
+  --color-paper-2: #fdf7ea;
+  --color-ink: #16120d;
+  --color-ink-soft: #4a4038;
+  --color-tomato: #e03b23;
+  --color-tomato-dark: #b82c18;
+  --color-mustard: #f7b500;
+  --color-pickle: #3d7a3d;
+  --color-cream: #fff8e6;
+}
+
+@layer utilities {
+  .shadow-hard {
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+  .shadow-hard-sm {
+    box-shadow: 3px 3px 0 var(--color-ink);
+  }
+  .shadow-hard-lg {
+    box-shadow: 10px 10px 0 var(--color-ink);
+  }
+  .shadow-hard-red {
+    box-shadow: 5px 5px 0 var(--color-tomato-dark);
+  }
+  .halftone {
+    background-image: radial-gradient(var(--color-ink) 1.1px, transparent 1.1px);
+    background-size: 7px 7px;
+  }
+  .halftone-light {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.5) 1.1px, transparent 1.1px);
+    background-size: 7px 7px;
+  }
+  .stripe-tomato {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--color-tomato) 0 12px,
+      transparent 12px 24px
+    );
+  }
+  .stripe-mustard {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--color-mustard) 0 10px,
+      transparent 10px 20px
+    );
+  }
+  .marker {
+    display: inline-block;
+    background-color: var(--color-mustard);
+    color: var(--color-ink);
+    line-height: 1.14;
+    padding: 0.1em 0.22em 0.08em;
+    margin: 0.12em 0 0.06em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .marker-red {
+    background-color: var(--color-tomato);
+    color: var(--color-cream);
+  }
+  .perf {
+    background-image: radial-gradient(var(--color-ink) 1.6px, transparent 1.7px);
+    background-size: 10px 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .tilt-l {
+    transform: rotate(-2.5deg);
+  }
+  .tilt-r {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+@keyframes stampIn {
+  from {
+    transform: scale(1.35) rotate(-8deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(-6deg);
+    opacity: 1;
+  }
+}
+
+.animate-stamp {
+  animation: stampIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+::selection {
+  background: var(--color-mustard);
+  color: var(--color-ink);
+}
