@@ -192,6 +192,22 @@ export default function HomePageClient({
         <ComoFunciona />
         <section id="cardapio" className="bg-paper scroll-mt-[72px]">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 grid lg:grid-cols-[1fr_380px] gap-10 items-start">
+            <div className="lg:hidden col-span-full flex items-start gap-3 border-[3px] border-ink bg-mustard/35 px-4 py-3 shadow-hard-sm">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border-[3px] border-ink bg-paper-2 text-lg" aria-hidden>
+                🛒
+              </span>
+              <div className="min-w-0">
+                <p className="font-display uppercase text-sm tracking-[0.08em]">
+                  Seu pedido fica na sacola, no fim do cardápio
+                </p>
+                <p className="mt-0.5 text-xs leading-snug text-ink-soft">
+                  Toque em “Adicionar” nos itens e depois em “Abrir sacola” para revisar.{" "}
+                  <a href="#pedido" className="font-bold text-tomato underline underline-offset-2">
+                    Ir para a sacola →
+                  </a>
+                </p>
+              </div>
+            </div>
             <MenuSection
               produtos={produtos}
               categorias={categorias}
@@ -221,14 +237,19 @@ export default function HomePageClient({
         <div className="fixed bottom-4 inset-x-4 z-40 lg:hidden">
           <a
             href="#pedido"
-            className="flex items-center justify-between gap-3 bg-ink text-cream border-[3px] border-ink shadow-hard px-4 py-3"
+            className="flex items-center justify-between gap-3 bg-ink text-cream border-[3px] border-ink shadow-hard px-4 py-2.5"
           >
-            <span className="font-display text-sm uppercase tracking-[0.1em]">
-              {itens.reduce((s, i) => s + i.qtd, 0)}{" "}
-              {itens.reduce((s, i) => s + i.qtd, 0) === 1 ? "item" : "itens"} · R$ {brl(total)}
+            <span className="min-w-0">
+              <span className="block font-display text-[10px] uppercase tracking-[0.2em] text-mustard">
+                Seu pedido está aqui
+              </span>
+              <span className="block font-display text-sm uppercase tracking-[0.1em]">
+                {itens.reduce((s, i) => s + i.qtd, 0)}{" "}
+                {itens.reduce((s, i) => s + i.qtd, 0) === 1 ? "item" : "itens"} · R$ {brl(total)}
+              </span>
             </span>
-            <span className="bg-mustard text-ink border-[3px] border-ink px-3 py-1.5 font-display text-sm uppercase tracking-[0.08em]">
-              Ver pedido →
+            <span className="shrink-0 bg-mustard text-ink border-[3px] border-ink px-3 py-1.5 font-display text-sm uppercase tracking-[0.08em]">
+              Abrir sacola →
             </span>
           </a>
         </div>
