@@ -53,6 +53,10 @@ export default function CartPanel({
           <span className="text-[10px] uppercase tracking-[0.18em] text-mustard">{unidade.nome}</span>
         </div>
 
+        <p className="lg:hidden border-b-[3px] border-ink bg-mustard/25 px-5 py-2 text-[10px] uppercase tracking-[0.14em] text-ink-soft">
+          É aqui que seu pedido aparece. Revise e envie no WhatsApp.
+        </p>
+
         <div className="p-5 space-y-4 max-h-[42vh] overflow-y-auto">
           {vazio ? (
             <div className="border-[3px] border-dashed border-ink/30 py-10 px-4 text-center">
