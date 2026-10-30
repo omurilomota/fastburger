@@ -71,6 +71,17 @@ export default function Footer({ unidades }: { unidades: Unidade[] }) {
           <p>© {new Date().getFullYear()} Fast Burger · Dracena &amp; Junqueirópolis</p>
           <p>Site como produto mensal</p>
         </div>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-4 text-center">
+          <a
+            href="https://wa.me/5518998133524"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Falar com Murilo Mota no WhatsApp"
+            className="text-[10px] uppercase tracking-[0.16em] text-cream/25 transition-colors hover:text-mustard"
+          >
+            Desenvolvido por Murilo Mota · 55 (18) 99813-3524
+          </a>
+        </div>
       </div>
     </footer>
   );
